@@ -22,10 +22,10 @@
       <tbody>
         <tr>
           <td class="border px-4 py-2 text-center">
-            {{ summary.totalExpenses.toFixed(2) }}
+            {{ summary.totalExpenses?.toFixed(2) }}
           </td>
           <td class="border px-4 py-2 text-center">
-            {{ summary.averageExpense.toFixed(2) }}
+            {{ summary.averageExpense?.toFixed(2) }}
           </td>
           <td class="border px-4 py-2 text-center">
             <ul class="flex flex-col items-start w-full">
@@ -33,7 +33,7 @@
                 class="text-start"
                 *ngFor="let expense of summary.expensesOwed"
               >
-                {{ expense.name }}: {{ expense.amountOwed.toFixed(2) }}
+                {{ expense.name }}: {{ expense.amountOwed?.toFixed(2) }}
               </li>
             </ul>
           </td>
@@ -43,7 +43,7 @@
                 class="text-start"
                 *ngFor="let expense of summary.expensesOwing"
               >
-                {{ expense.name }}: {{ expense.amountOwed.toFixed(2) }}
+                {{ expense.name }}: {{ expense.amountOwed?.toFixed(2) }}
               </li>
             </ul>
           </td>
@@ -53,7 +53,7 @@
                 class="text-start"
                 *ngFor="let expense of summary.expensesOwedTo"
               >
-                {{ expense.name }}: {{ expense.amountOwed.toFixed(2) }}
+                {{ expense.name }}: {{ expense.amountOwed?.toFixed(2) }}
               </li>
             </ul>
           </td>
@@ -61,7 +61,7 @@
             <ul class="flex flex-col items-start w-full">
               <li class="text-start" *ngFor="let payment of summary.payments">
                 {{ payment.from }} pays {{ payment.to }}
-                {{ payment.amount.toFixed(2) }}
+                {{ payment.amount?.toFixed(2) }}
               </li>
             </ul>
           </td>

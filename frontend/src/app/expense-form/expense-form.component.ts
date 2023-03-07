@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { ExpenseService, Expense } from '../services/expenses.service';
+import {Component} from '@angular/core';
+import {ExpenseService, Expense} from '../services/expenses.service';
 
 @Component({
   selector: 'app-expense-form',
@@ -16,7 +16,10 @@ export class ExpenseFormComponent {
   }
 
   addExpense() {
-    const newExpense: Expense = { name: this.name, expense: this.expense };
+    if(this.name.trim() === '' || this.expense === null) {
+      return;
+    }
+    const newExpense: Expense = {name: this.name, expense: this.expense};
     this.expenseService.addExpense(newExpense);
     this.name = '';
     this.expense = null;

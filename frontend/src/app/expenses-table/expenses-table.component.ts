@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Expense, ExpenseService } from '../services/expenses.service';
+import {Component, Input, OnInit} from '@angular/core';
+import {Expense, ExpenseService} from '../services/expenses.service';
 
 @Component({
   selector: 'app-expenses-table',
@@ -17,7 +17,7 @@ export class ExpensesTableComponent implements OnInit {
   ngOnInit(): void {}
 
   addExpense(name: string, expense: number) {
-    this.expenses.push({ name, expense });
+    this.expenses.push({name, expense});
   }
 
   // calculateExpenses() {

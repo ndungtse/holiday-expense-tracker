@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Expense, ExpenseService } from '../services/expenses.service';
+import {Component, Input, OnInit} from '@angular/core';
+import {Expense, ExpenseService} from '../services/expenses.service';
 
 @Component({
   selector: 'app-settle-up',
