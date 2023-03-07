@@ -7,9 +7,9 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let expense of expenses">
+    <tr data-testid="expense-row" *ngFor="let expense of expenses">
       <td class="border px-4 py-2 text-center">{{ expense.name }}</td>
-      <td class="border px-4 py-2 text-center">{{ expense.expense }}</td>
+      <td class="border px-4 py-2 text-center">${{ expense.expense }}</td>
     </tr>
   </tbody>
 </table>

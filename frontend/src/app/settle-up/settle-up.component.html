@@ -1,6 +1,7 @@
 <div class="flex flex-col w-full gap-y-3">
   <button
     class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-fit"
+    data-testid="settle-up-button"
     (click)="settleUp()"
   >
     Settle Up
@@ -8,7 +9,7 @@
   <p class="text-center text-red-600">{{ warn }}</p>
   <!-- render table if summary-->
   <div class="w-full overflow-x-auto">
-    <table *ngIf="summary" class="table-fixed w-full min-w-[1000px]">
+    <table data-testid="summary-table" *ngIf="summary" class="table-fixed w-full min-w-[1000px]">
       <thead>
         <tr>
           <th>Total Expenses</th>
