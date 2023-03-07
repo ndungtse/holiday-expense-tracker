@@ -1,13 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-import { ExpensesTableComponent } from './expenses-table/expenses-table.component';
-import { ExpenseFormComponent } from './expense-form/expense-form.component';
+import { ExpensesPageComponent } from './expenses-page/expenses-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/expenses', pathMatch: 'full' },
-  { path: 'expenses', component: ExpensesTableComponent },
-  { path: 'add-expense', component: ExpenseFormComponent },
+  { path: 'expenses', component: ExpensesPageComponent },
 ];
 
 @NgModule({

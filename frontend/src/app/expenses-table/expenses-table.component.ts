@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Expense, ExpenseService } from '../services/expenses.service';
 
 @Component({
@@ -7,7 +7,8 @@ import { Expense, ExpenseService } from '../services/expenses.service';
   styleUrls: ['./expenses-table.component.css'],
 })
 export class ExpensesTableComponent implements OnInit {
-  expenses: Expense[] = [];
+  // expenses: Expense[] = [];
+  @Input() expenses: Expense[] = [];
   calculatedExpenses: any;
   showCalculatedExpenses = false;
 

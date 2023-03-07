@@ -24,6 +24,8 @@ export class ExpenseService {
   }
 
   calculateExpenses(): Observable<any> {
-    return this.http.post('http://localhost:2023/settle-up', this.expenses);
+    return this.http.post('http://localhost:2023/settle-up', {
+      expenses: this.expenses,
+    });
   }
 }

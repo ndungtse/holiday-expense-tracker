@@ -8,6 +8,7 @@ import { ExpenseFormComponent } from './expense-form/expense-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ExpensesPageComponent } from './expenses-page/expenses-page.component';
+import { SettleUpComponent } from './settle-up/settle-up.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ExpensesPageComponent } from './expenses-page/expenses-page.component';
     ExpensesTableComponent,
     ExpenseFormComponent,
     ExpensesPageComponent,
+    SettleUpComponent,
   ],
   imports: [
     BrowserModule,

@@ -16,14 +16,13 @@ export class ExpensesPageComponent implements OnInit {
   }
 
   getExpenses(): void {
-    this.expenseService
-      .getExpenses()
-      .subscribe((expenses: Expense[]) => (this.expenses = expenses));
+    this.expenses = this.expenseService.getExpenses();
   }
 
-  addExpense(expense: Expense): void {
-    this.expenseService.addExpense(expense).subscribe((expense) => {
-      this.expenses.push(expense);
-    });
-  }
+  // addExpense() {
+  //   const newExpense: Expense = { name: this.name, expense: this.expense };
+  //   this.expenseService.addExpense(newExpense);
+  //   this.name = '';
+  //   this.expense = null;
+  // }
 }

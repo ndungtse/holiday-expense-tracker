@@ -1,0 +1,72 @@
+<div class="flex flex-col w-full gap-y-3">
+  <button
+    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-fit"
+    (click)="settleUp()"
+  >
+    Settle Up
+  </button>
+  <p class="text-center text-red-600">{{ warn }}</p>
+  <!-- render table if summary-->
+  <div class="w-full overflow-x-auto">
+    <table *ngIf="summary" class="table-fixed w-full min-w-[1000px]">
+      <thead>
+        <tr>
+          <th>Total Expenses</th>
+          <th>Average Expense</th>
+          <th>Expenses Owed</th>
+          <th>Expenses Owing</th>
+          <th>Expenses Owed To</th>
+          <th>Payments</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2 text-center">
+            {{ summary.totalExpenses.toFixed(2) }}
+          </td>
+          <td class="border px-4 py-2 text-center">
+            {{ summary.averageExpense.toFixed(2) }}
+          </td>
+          <td class="border px-4 py-2 text-center">
+            <ul class="flex flex-col items-start w-full">
+              <li
+                class="text-start"
+                *ngFor="let expense of summary.expensesOwed"
+              >
+                {{ expense.name }}: {{ expense.amountOwed.toFixed(2) }}
+              </li>
+            </ul>
+          </td>
+          <td class="border px-4 py-2 text-center">
+            <ul class="flex flex-col items-start w-full">
+              <li
+                class="text-start"
+                *ngFor="let expense of summary.expensesOwing"
+              >
+                {{ expense.name }}: {{ expense.amountOwed.toFixed(2) }}
+              </li>
+            </ul>
+          </td>
+          <td class="border px-4 py-2 text-center">
+            <ul class="flex flex-col items-start w-full">
+              <li
+                class="text-start"
+                *ngFor="let expense of summary.expensesOwedTo"
+              >
+                {{ expense.name }}: {{ expense.amountOwed.toFixed(2) }}
+              </li>
+            </ul>
+          </td>
+          <td class="border px-4 py-2 text-center">
+            <ul class="flex flex-col items-start w-full">
+              <li class="text-start" *ngFor="let payment of summary.payments">
+                {{ payment.from }} pays {{ payment.to }}
+                {{ payment.amount.toFixed(2) }}
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
