@@ -1,0 +1,5 @@
+<div class="container mx-auto">
+    <h1 class="text-center text-4xl font-bold mb-8">Expenses</h1>
+    <app-expense-form (addExpense)="addExpense($event)"></app-expense-form>
+    <app-expenses-table [expenses]="expenses"></app-expenses-table>
+</div>
